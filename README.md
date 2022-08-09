@@ -1,24 +1,54 @@
-# README
+# Rails Blog Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+## Built With
 
-Things you may want to cover:
+- Ruby
+- Rails
+- Rubocop, Rspecs, Style Lint
 
-* Ruby version
+## Live Demo (if available)
 
-* System dependencies
+[Live Demo Link]()
 
-* Configuration
+## Getting Started
 
-* Database creation
+To get a local copy up and running follow these simple example steps.
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+- ruby and rails
+- node js
 
-* Services (job queues, cache servers, search engines, etc.)
+### Setup
 
-* Deployment instructions
+- clone repo
+- cd into repo
+- bundle install
+- npm install
 
-* ...
+### Usage
+
+- rails s
+
+### Run tests
+
+### Deployment
+
+## Authors
+
+## Joy Kwamboka
+
+- Github: [@kwambiee](https://github.com/kwambiee)
+- Twitter: [@kwambiee](https://twitter.com/kwambiee)
+- Linkedin: [Joy Kwamboka](https://www.linkedin.com/in/joy-kwamboka)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
