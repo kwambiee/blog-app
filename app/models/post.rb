@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  validates :title, presence: true
+
   has_many :likes, foreign_key: 'post_id', class_name: 'Like'
   has_many :comments, foreign_key: 'post_id', class_name: 'Comment'
 
