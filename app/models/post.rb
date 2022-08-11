@@ -8,11 +8,13 @@ class Post < ApplicationRecord
 
   belongs_to :author, class_name: 'User'
 
+  after_create :update_post_counter
+
   def update_post_counter
-    user.increment!(:post_counter)
+    author.update(post_counter: author.posts.count)
   end
 
   def recent_comments
-    comments.limit(5).order(created_at: :desc)
+    comments.last(5)
   end
 end
