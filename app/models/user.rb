@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'author_id', class_name: 'Comment'
 
   def recent_posts
-    posts.limit(3).order(created_at: :desc)
+    posts.last(3)
   end
 end
