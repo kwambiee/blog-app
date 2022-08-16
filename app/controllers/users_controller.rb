@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @id=params[:id]
+    @id = params[:id]
   end
 end
