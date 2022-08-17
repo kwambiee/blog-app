@@ -10,9 +10,11 @@
 
 
 
-    <div class='comments'>
+    <div class='post_card'>
         <% @post.comments.each do |c| %>
-        <%= c.author.name %>: <%= c.text%><
+            <div class='comment-card'>
+                    <%= c.author.name %> : <%= c.text %>
+                </div>
       <% end %>
     </div>
 

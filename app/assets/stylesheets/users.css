@@ -52,8 +52,8 @@ button{
 .post_card{
     border: 2px solid black;
     width: 60%;
-    margin: 10px auto;
-    padding: 10px;
+    margin: 1px auto;
+    padding: 5px;
 }
 .interactions{
     text-align: end;
@@ -67,5 +67,10 @@ button{
 .comments{
     text-align: end;
 }
+.post_comments{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
 
 

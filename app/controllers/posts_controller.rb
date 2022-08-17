@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   def index
     user_id = params[:user_id]
-    @user= User.find(user_id)
-    @posts= @user.posts.order(created_at: :desc)
+    @user = User.find(user_id)
+    @posts = @user.posts.order(created_at: :desc)
   end
 
   def show
@@ -12,6 +12,5 @@ class PostsController < ApplicationController
     @post = Post.find(id)
     @comments = @post.comments.order(created_at: :desc)
     @likes = @post.likes.all
-
   end
 end
