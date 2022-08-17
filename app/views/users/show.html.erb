@@ -8,11 +8,12 @@
         <div class='post-card'>
             <%= link_to post_path(post.id) do %>
                 <h3><%= post.title %></h3>
-                <p><%= post.text %></p>
+                <p><%= post.text.truncate(30) %></p>
             <% end %>
             <div>
-            <span>Comments: <%= post.comments_counter || 0 %></span>
-            <span>Likes: <%= post.likes_counter || 0 %></span>
+                <span>Comments: <%= post.comments_counter || 0 %></span>
+                <span>Likes: <%= post.likes_counter || 0 %></span>
+            </div>
         </div>
     <% end %>
 </div>

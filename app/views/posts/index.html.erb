@@ -1,1 +1,23 @@
-<h1>Here is a list of post from this user</h1>
+<h1> List of Posts from the User</h1>
+<%= render partial: 'users/user_profile', locals: {user:@user} %>
+
+<% @posts.each do |post| %>
+    <div class='post-card'>
+        <%= link_to post_path(post.id) do %>
+            <h3><%= post.title %></h3>
+            <p><%= post.text.truncate(30) %></p>
+        <% end %>
+        <div>
+            <span>Comments: <%= post.comments_counter || 0 %></span>
+            <span>Likes: <%= post.likes_counter || 0 %></span>
+        </div>
+    </div>
+<% end %>
+
+<% @posts.recent_comments.each do |comment| %>
+    <div class='comment-card'>
+    <%= comment.user.name %> : <%= comment.text %>
+    </div>
+<% end %>
+
+
