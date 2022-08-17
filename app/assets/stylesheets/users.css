@@ -60,5 +60,12 @@ button{
     font-size: 16px;
     margin-right: 1rem;
 }
+.details_card{
+    border: 2px solid black;
+    ;
+}
+.comments{
+    text-align: end;
+}
 
 
