@@ -1,1 +1,23 @@
-<h1>Here is the profile page of user with the given id</h1>
+<h1>User Details </h1>
+
+<%= render partial: 'user_profile', locals: {user:@user} %>
+<%= render partial: 'bio_card', locals: {user:@user} %>
+
+<div class='recent-posts'>
+    <% @recent_posts.each do |post| %>
+        <div class='post-card'>
+            <%= link_to post_path(post.id) do %>
+                <h3><%= post.title %></h3>
+                <p><%= post.text %></p>
+            <% end %>
+            <div>
+            <span>Comments: <%= post.comments_counter || 0 %></span>
+            <span>Likes: <%= post.likes_counter || 0 %></span>
+        </div>
+    <% end %>
+</div>
+
+<%= link_to "See all posts" , user_posts_path(@user) if @user.posts_counter> 0 %>
+
+
+
