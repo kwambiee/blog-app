@@ -1,0 +1,7 @@
+<h1> Create new Post</h1>
+
+<% bootstrap_form_with model:[@current, @current.posts.build], method: :post, local:true do |f| %>
+    <%= f.input :title %>
+    <%= f.input :text %>
+    <%= f.submit %>
+<% end %>
