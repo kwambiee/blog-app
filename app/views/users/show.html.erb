@@ -1,3 +1,7 @@
+<nav class="fs-6 p-3 container mt-2 p-2 bio">
+  <%= link_to "Home", root_path, class:"button px-3 my-2" %>
+</nav>
+
 <h1 class='users_heading'>User Details </h1>
 
 <%= render partial: 'user_profile', locals: {user:@user} %>

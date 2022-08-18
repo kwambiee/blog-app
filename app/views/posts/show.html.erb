@@ -1,4 +1,7 @@
 <div>
+    <nav class="fs-6 p-3 container mt-2 p-2 bio">
+      <%= link_to "Home", root_path, class: "button px-3" %>
+    </nav>
     <h1 class='users_heading'>Post Details</h1>
    <div class='post_card'>
     <div class=' d-flex justify-content-between'>
@@ -15,5 +18,7 @@
                 </div>
       <% end %>
     </div>
+
+    <%= render partial: 'comments/create' %>
 
 </div>
