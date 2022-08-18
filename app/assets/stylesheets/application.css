@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.user-card {
+  /* display: flex; */
+  margin: 5%;
+}
+
+.user-info {
+  flex: 1;
+  margin: 20px;
+}

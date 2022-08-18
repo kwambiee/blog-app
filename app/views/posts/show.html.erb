@@ -1,1 +1,21 @@
-<h1>Here is the post with the given id</h1>
+<div>
+    <h1 class='users_heading'>Post Details</h1>
+   <div class='post_card'>
+    <div class=' d-flex justify-content-between'>
+        <h4><%= @post.title %> by <%= link_to user_path(@post.author.id) do %> <%= @post.author.name %> <% end %></h4>
+        <p>Comments : <%= @post.comments_counter || 0 %> Likes : <%= @post.likes.size || 0 %> </p>
+    </div>
+        <%= @post.text %>
+    </div>
+
+
+
+    <div class='post_card'>
+        <% @post.comments.each do |c| %>
+            <div class='comment-card'>
+                    <%= c.author.name %> : <%= c.text %>
+                </div>
+      <% end %>
+    </div>
+
+</div>

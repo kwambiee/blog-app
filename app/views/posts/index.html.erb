@@ -1,1 +1,30 @@
-<h1>Here is a list of post from this user</h1>
+<h1 class="users_heading"> List of Posts from the User</h1>
+<%= render partial: 'users/user_profile', locals: {user:@user} %>
+
+<% @user.posts.each do |post| %>
+    <div class='post_card'>
+        <div class="post-details">
+        <%= link_to user_post_path(@user.id, post.id), id: "user_post#{post.id}" do %>
+            <h3><%= post.title %></h3>
+            <p><%= post.text.truncate(30) %></p>
+        <% end %>
+        </div>
+        <div class='interactions'>
+            <span>Comments: <%= post.comments_counter || 0 %></span>
+            <span>Likes: <%= post.likes_counter || 0 %></span>
+        </div>
+    </div>
+
+        <div class="post_card post_comments">
+            <% post.recent_comments.each do |comment| %>
+                <div class='comment-card'>
+                    <%= comment.author.name %> : <%= comment.text %>
+                </div>
+            <% end %>
+        </div>
+
+<% end %>
+
+
+
+
