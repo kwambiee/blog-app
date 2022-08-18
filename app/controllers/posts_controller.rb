@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    new_post=current_user.posts.build(post_params)
+    new_post = current_user.posts.build(post_params)
 
     respond_to do |format|
       format.html do
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
