@@ -1,0 +1,11 @@
+<h1 class="users_heading"> Create new post</h1>
+
+<section class="fs-4 p-3 container mt-5 p-2">
+  <%= form_with model:[@current, @current.posts.build], method: :post, local: true do |f| %>
+    <%= f.label :title, "Title", class: "form-label fs-3" %>
+    <%= f.text_field :title, :placeholder => "Title goes here...", required: true, class: "form-control mb-4" %>
+    <%= f.label :text, "Write a new post", class: "form-label fs-3" %>
+    <%= f.text_area :text, size: "50x15", :placeholder => "Add your post here...", required: true, class: "form-control" %>
+    <%= f.submit "Add Post", data: {disable_with: "Adding..."}, class: "btn btn-primary my-3" %>
+  <% end %>
+</section>

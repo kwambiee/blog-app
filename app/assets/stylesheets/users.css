@@ -82,3 +82,17 @@ button {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+.container {
+  width: 600px;
+}
+
+.button {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.like {
+  margin: 5px 20%;
+}

@@ -1,3 +1,7 @@
+<nav class="fs-6 p-3 container mt-2 p-2 bio">
+  <%= link_to "Home", root_path, class:"button px-3 my-2" %>
+</nav>
+
 <h1 class='users_heading'>User Details </h1>
 
 <%= render partial: 'user_profile', locals: {user:@user} %>
@@ -19,8 +23,9 @@
 </div>
 <div class='all_posts'>
 <button class='d-flex justify-content-center'>
-<%= link_to "See all posts" , user_posts_path(@user) if @user.post_counter> 0 %>
+<%= link_to "See all posts" , user_posts_path(@user) %>
 </button>
+
 </div>
 
 

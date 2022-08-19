@@ -1,5 +1,15 @@
+<div class="home d-flex mx-5 justify-content-between my-3">
+<%= link_to "Home", root_path, class: "button px-3" %>
+<%= link_to "Back", :back, class: "button px-3" %>
+</div>
+
+
 <h1 class="users_heading"> List of Posts from the User</h1>
+
 <%= render partial: 'users/user_profile', locals: {user:@user} %>
+<button class="button d-flex justify-content-center">
+    <%= link_to "Create new post", new_user_post_path(@user.id) %>
+</button>
 
 <% @user.posts.each do |post| %>
     <div class='post_card'>
@@ -22,7 +32,6 @@
                 </div>
             <% end %>
         </div>
-
 <% end %>
 
 

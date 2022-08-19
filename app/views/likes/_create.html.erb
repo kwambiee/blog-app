@@ -1,0 +1,5 @@
+<section>
+  <%= form_with model:[@post, @post.likes.build] do |f|%>
+      <%= f.submit "👍" , data: {disable_with: "👍"}, class: "btn btn-primary mb-3 like"%>
+  <%end%>
+</section>
