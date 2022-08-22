@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+ cclass PostsController < ApplicationController
   def index
     user_id = params[:user_id]
     @user = User.find(user_id)

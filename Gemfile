@@ -51,6 +51,8 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'database_cleaner'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
@@ -64,7 +66,13 @@ group :development do
   # gem "spring"
 end
 gem 'rubocop', '>= 1.0', '< 2.0'
-
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'rails-controller-testing'
-gem 'rspec-rails', '~> 5.0.0'
+
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
+
+gem "bullet"
+
