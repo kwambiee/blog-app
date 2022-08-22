@@ -10,8 +10,6 @@ Rails.application.configure do
     Bullet.add_footer    = true
     Bullet.counter_cache_enable  = false
 
-    Bullet.add_safelist :type => :counter_cache, :class_name => "User", :association => :comments
-    Bullet.add_safelist :type => :counter_cache, :class_name => "User", :association => :likes
   end
 
   # Settings specified here will take precedence over those in config/application.rb.
