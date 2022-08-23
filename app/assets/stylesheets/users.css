@@ -6,6 +6,10 @@ a {
   text-decoration: none;
   color: black;
 }
+.all_users{
+  display: flex;
+  flex-direction: column;
+}
 
 .users_heading {
   text-align: center;
