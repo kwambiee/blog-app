@@ -96,3 +96,14 @@ button {
 .like {
   margin: 5px 20%;
 }
+.field, .actions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.actions a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
