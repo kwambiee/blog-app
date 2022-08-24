@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     user_id = params[:user_id]
     post_id = params[:id]
     @user = User.find(user_id)
-    @post = Post.includes(comments: [:author]).find(post_id)
+    @post = @user.posts.includes(:comments, :likes).find(post_id)
   end
 
   def new
@@ -21,9 +21,9 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if new_post.save
-          redirect_to user_post_path(new_post.author_id, new_post.id), notice: 'Post was successfully created.'
+          redirect_to user_post_path(new_post.user_id, new_post.id), notice: 'Post created successfully'
         else
-          render :new, alert: 'Post was not created.'
+          render :new, alert: 'An error occured. Please try again!'
         end
       end
     end

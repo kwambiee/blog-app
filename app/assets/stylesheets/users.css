@@ -7,6 +7,11 @@ a {
   color: black;
 }
 
+.all_users {
+  display: flex;
+  flex-direction: column;
+}
+
 .users_heading {
   text-align: center;
   text-decoration: underline;
@@ -95,4 +100,18 @@ button {
 
 .like {
   margin: 5px 20%;
+}
+
+.field,
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.actions a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
