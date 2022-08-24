@@ -18,6 +18,9 @@
                 </div>
       <% end %>
     </div>
+    <% if can? :destroy, @post %>
+        <%= link_to "Delete Post", user_post_path(@post.author, @post), method: :delete, class: "button px-3" %>
+
 
     <%= render partial: "likes/create" %>
     <%= render partial: 'comments/create' %>

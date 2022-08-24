@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
   def index
     user_id = params[:user_id]
     @user = User.includes(:posts).find(user_id)
@@ -12,11 +15,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @current = current_user
+    @post= Post.new
   end
 
   def create
-    new_post = current_user.posts.build(post_params)
+    new_post = Post.new(post_params)
 
     respond_to do |format|
       format.html do
@@ -27,6 +30,12 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_path(@post.author), notice: "Successfully deleted the post #{@post.title}."
   end
 
   private
