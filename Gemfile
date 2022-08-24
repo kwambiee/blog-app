@@ -74,6 +74,11 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+group :development, :test do
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+end
 gem 'bullet'
 gem 'devise'
 gem 'cancancan'

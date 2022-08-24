@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def recent_posts
     posts.last(3)
   end
+
+  def admin?
+    role == 'admin'
+  end
 end

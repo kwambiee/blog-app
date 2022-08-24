@@ -12,6 +12,7 @@
   </head>
 
   <body>
+  <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-secondary", data: { turbo_method: :delete } %>
     <% if notice %>
         <p class="alert alert-success text-center msg"><%= notice %></p>
       <% end %>

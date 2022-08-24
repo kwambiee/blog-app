@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(text: comment_parameters[:text], author_id: current_user.id, post_id: @post.id)
@@ -12,6 +15,12 @@ class CommentsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to user_post_path(@comment.post.author.id, @comment.post.id), notice: "Successfully deleted the comment #{@comment.text}."
   end
 
   private
