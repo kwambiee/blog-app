@@ -76,3 +76,4 @@ end
 
 gem 'bullet'
 gem 'devise'
+gem 'cancancan'
