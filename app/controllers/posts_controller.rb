@@ -1,18 +1,15 @@
 class PostsController < ApplicationController
-  def index
-    user_id = params[:user_id]
-    @user = User.includes(:posts).find(user_id)
-  end
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
+  def index; end
 
   def show
-    user_id = params[:user_id]
-    post_id = params[:id]
-    @user = User.find(user_id)
-    @post = @user.posts.includes(:comments, :likes).find(post_id)
+    @post = Post.find(params[:id])
   end
 
   def new
-    @current = current_user
+    @post = current_user.posts.build
   end
 
   def create
@@ -21,12 +18,18 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if new_post.save
-          redirect_to user_post_path(new_post.user_id, new_post.id), notice: 'Post created successfully'
+          redirect_to user_post_path(new_post.author_id, new_post.id), notice: 'Post created successfully'
         else
           render :new, alert: 'An error occured. Please try again!'
         end
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(current_user), notice: "Successfully deleted the post #{@post.title}."
   end
 
   private

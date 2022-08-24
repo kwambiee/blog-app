@@ -6,15 +6,15 @@
 
 <h1 class="users_heading"> List of Posts from the User</h1>
 
-<%= render partial: 'users/user_profile', locals: {user:@user} %>
+<%= render partial: 'users/user_profile', locals: {user: current_user} %>
 <button class="button d-flex justify-content-center">
-    <%= link_to "Create new post", new_user_post_path(@user.id) %>
+    <%= link_to "Create new post", new_user_post_path(current_user.id) %>
 </button>
 
-<% @user.posts.each do |post| %>
+<% current_user.posts.each do |post| %>
     <div class='post_card'>
         <div class="post-details">
-        <%= link_to user_post_path(@user.id, post.id), id: "user_post#{post.id}" do %>
+        <%= link_to user_post_path(current_user.id, post.id), id: "user_post#{post.id}" do %>
             <h3><%= post.title %></h3>
             <p><%= post.text.truncate(30) %></p>
         <% end %>

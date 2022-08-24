@@ -16,8 +16,16 @@
             <div class='comment-card'>
                     <%= c.author.name %> : <%= c.text %>
                 </div>
+                <% if can? :destroy, c %>
+          <%= button_to "Delete Comment", user_post_comment_path(@post.author.id,@post.id, c.id ), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>)),
+
+        <% end %>
       <% end %>
     </div>
+    <% if can? :destroy, @post %>
+            <%= button_to "Delete Post", user_post_path(@post.author.id,@post.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+    <% end %>
+
 
     <%= render partial: "likes/create" %>
     <%= render partial: 'comments/create' %>

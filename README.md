@@ -1,6 +1,7 @@
 # Rails Blog Project
 
-> The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+
 ## Built With
 
 - Ruby
@@ -42,6 +43,12 @@ To get a local copy up and running follow these simple example steps.
 - Github: [@kwambiee](https://github.com/kwambiee)
 - Twitter: [@kwambiee](https://twitter.com/kwambiee)
 - Linkedin: [Joy Kwamboka](https://www.linkedin.com/in/joy-kwamboka)
+
+👤 **Dinma-Faith**
+
+- GitHub: [@githubhandle](https://github.com/Dinma-Faith)
+- Twitter: [@twitterhandle](https://twitter.com/phayte_p)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/chidinma-faith)
 
 ## 🤝 Contributing
 

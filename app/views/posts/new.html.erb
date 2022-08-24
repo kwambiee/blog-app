@@ -1,7 +1,7 @@
 <h1 class="users_heading"> Create new post</h1>
 
 <section class="fs-4 p-3 container mt-5 p-2">
-  <%= form_with model:[@current, @current.posts.build], method: :post, local: true do |f| %>
+  <%= form_with model: @post, url: user_posts_path, method: :post do |f| %>
     <%= f.label :title, "Title", class: "form-label fs-6" %>
     <%= f.text_field :title, :placeholder => "Title goe here...", required: true, class: "form-control mb-4" %>
     <%= f.label :text, "Write a new post", class: "form-label fs-6" %>
