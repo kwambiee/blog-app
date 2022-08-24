@@ -2,15 +2,14 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
-  def index
-  end
+  def index; end
 
   def show
     @post = Post.find(params[:id])
   end
 
   def new
-    @post= current_user.posts.build
+    @post = current_user.posts.build
   end
 
   def create
