@@ -1,5 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-    before_action :authenticate_user!
+    skip_before_action :verify_authenticity_token
     def index
         @user=User.find(params[:user_id])
         @posts = @user.posts.find(params[:post_id])
@@ -16,7 +16,7 @@ class Api::V1::CommentsController < ApplicationController
 
         if @comment.save
             respond_to do |format|
-                firmat.html { redirect_to user_post_path(@post.author.id, @post.id), notice: 'Comment created successfully' }
+                firmat.html { redirect_to user_post_path(current_user, @post), notice: 'Comment created successfully' }
 
                 format.json { render json: @comment, status: :created }
             end
