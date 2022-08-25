@@ -1,5 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  #   skip_before_action :verify_authenticity_token
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.find(params[:post_id])
@@ -12,11 +12,11 @@ class Api::V1::CommentsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
-    @comment = @post.comments.create(text: comment_parameters[:text], author_id: current_user.id, post_id: @post.id)
+    @comment = @post.comments.create(text: comment_parameters[:text], author_id: @user.id, post_id: @post.id)
 
     if @comment.save
       respond_to do |format|
-        firmat.html { redirect_to user_post_path(current_user, @post), notice: 'Comment created successfully' }
+        format.html { redirect_to user_post_path(current_user, @post), notice: 'Comment created successfully' }
 
         format.json { render json: @comment, status: :created }
       end

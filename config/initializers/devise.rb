@@ -234,9 +234,12 @@ Devise.setup do |config|
   config.jwt do |jwt|
     jwt.secret = 'e1be13afca0b8db9be15c6903bbc60dd63026abf9f0353c214f5f8bd24bd8723a30d0af1021ea3883f759a76e155a7b540f4fdf7181673466970b8fc3f692eb6'
     jwt.dispatch_requests = [
-      ['POST', %r{^/sign_in$}]
+      ['POST', %r{^/login$}]
     ]
-    jwt.expiration_time = 15.day.to_i
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 5.minutes.to_i
   end
 
   # ==> OmniAuth
