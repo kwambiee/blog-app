@@ -75,10 +75,14 @@ group :test do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
 end
+gem 'bcrypt', '~> 3.1.7'
 gem 'bullet'
 gem 'cancancan'
 gem 'devise'
+gem 'devise-jwt', '~> 0.9.0'
+gem 'rack-cors'
