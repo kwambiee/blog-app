@@ -4,7 +4,7 @@ info:
   title: API V1
   version: v1
 paths:
-  "/users/{id}/posts/{id}/comments":
+  "/api/v1/users/{id}/posts/{id}/comments":
     get:
       summary: Get all comments
       tags:
@@ -41,7 +41,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/Comment"
-  "/users/{id}/posts":
+  "/api/v1/users/{id}/posts":
     get:
       summary: Get all posts
       tags:
@@ -61,7 +61,7 @@ paths:
                 type: array
                 items:
                   "$ref": "#/components/schemas/Post"
-  "/users/{id}/posts/{id}":
+  "/api/v1/users/{id}/posts/{id}":
     get:
       summary: Get post by id
       tags:
@@ -79,7 +79,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/Post"
-  "/users":
+  "/api/v1/users":
     get:
       summary: Get all users
       tags:
@@ -93,7 +93,7 @@ paths:
                 type: array
                 items:
                   "$ref": "#/components/schemas/User"
-  "/users/{id}":
+  "/api/v1/users/{id}":
     get:
       summary: Get user by id
       tags:

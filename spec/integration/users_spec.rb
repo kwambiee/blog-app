@@ -1,7 +1,7 @@
 require 'swagger_helper'
 
 describe 'Users API' do
-  path '/users' do
+  path '/api/v1/users' do
     get 'Get all users' do
       tags 'Users'
       produces 'application/json'
@@ -12,7 +12,7 @@ describe 'Users API' do
     end
   end
 
-  path '/users/{id}' do
+  path '/api/v1/users/{id}' do
     get 'Get user by id' do
       tags 'Users'
       produces 'application/json'

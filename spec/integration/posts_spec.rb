@@ -1,7 +1,7 @@
 require 'swagger_helper'
 
 describe 'Posts API' do
-  path '/users/{id}/posts' do
+  path '/api/v1/users/{id}/posts' do
     get 'Get all posts' do
       tags 'Posts'
       produces 'application/json'
@@ -13,7 +13,7 @@ describe 'Posts API' do
     end
   end
 
-  path '/users/{id}/posts/{id}' do
+  path '/api/v1/users/{id}/posts/{id}' do
     get 'Get post by id' do
       tags 'Posts'
       produces 'application/json'
